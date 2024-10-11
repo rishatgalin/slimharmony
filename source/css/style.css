@@ -44,17 +44,23 @@ input {
 .regular {
   font-weight: 400;
 }
-
 .semibold {
   font-weight: 600;
 }
-
+.medium {
+  font-weight: 500;
+}
 .extrabold {
   font-weight: 800;
 }
 
 .horizontal-offset {
   padding: 0 var(--horizontal-offset);
+  max-width: 1065px;
+  margin: 0 auto;
+}
+.vertical-offset {
+  padding: 64px 0;
 }
 
 
@@ -111,8 +117,78 @@ input {
   line-height: 22px;
 }
 
+/* PROGRAMS  */
+.b-programs {
+  text-align: center;
+}
+.b-programs h2 {
+  font-size: 80px;
+  line-height: 79px;
+}
+.b-programs__list {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+
+.b-module {
+  width: 100%;
+  background-color: blueviolet;
+  border-radius: 34px;
+  padding: 72px 54px;
+  position: relative;
+  text-align: left;
+}
+
+.b-module__title {
+  position: absolute;
+  border-radius: 18px;
+  top: 0;
+  transform: translateY(-50%);
+  border: 1px solid red;
+  font-size: 37px;
+  width: 278px;
+  height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.b-module h3 {
+  line-height: 54px;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.b-module__results {
+  margin-top: 42px;
+}
+.b-module__results h4 {
+  line-height: 40px;
+  font-size: 21px;
+  text-transform: uppercase;
+}
+.b-module__results ul {
+  line-height: 20px;
+  font-size: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 16px;
+  column-gap: 24px;
+  margin-top: 24px;
+}
+.b-module__results ul > li {
+  flex-basis: calc(50% - 12px);
+  padding-left: 20px;
+  background-image: url('/img/check.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: left 4px;
+}
+
 @media only screen and (min-width: 48em) {
-  .b-reviews {
+  .vertical-offset {
     padding: 100px 0;
   }
 }
