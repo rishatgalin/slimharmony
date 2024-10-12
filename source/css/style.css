@@ -181,7 +181,7 @@ input {
 .b-module__results ul > li {
   flex-basis: calc(50% - 12px);
   padding-left: 20px;
-  background-image: url('/img/check.png');
+  background-image: url('../img/check.png');
   background-size: 12px;
   background-repeat: no-repeat;
   background-position: left 4px;
