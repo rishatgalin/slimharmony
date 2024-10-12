@@ -44,14 +44,17 @@ input {
 .regular {
   font-weight: 400;
 }
-.semibold {
-  font-weight: 600;
-}
 .medium {
-  font-weight: 500;
+  font-family: 'Oranienbaum Medium'
+}
+.semibold {
+  font-family: 'Oranienbaum Semibold';
+}
+.bold {
+  font-family: 'Oranienbaum Bold';
 }
 .extrabold {
-  font-weight: 800;
+  font-family: 'Oranienbaum ExtraBold';
 }
 
 .horizontal-offset {
@@ -71,7 +74,6 @@ input {
 
 .b-reviews h2 {
   font-size: 55px;
-  text-transform: uppercase;
 }
 
 .b-reviews__wrapper {
@@ -94,6 +96,7 @@ input {
   min-width: 263px;
   width: 263px;
   height: 435px;
+  background: linear-gradient(315deg, #090015, #6e069a);
   background-color: blueviolet;
   display: flex;
   flex-direction: column;
@@ -124,17 +127,79 @@ input {
 .b-programs h2 {
   font-size: 80px;
   line-height: 79px;
+  position: relative;
 }
+.b-programs h2::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(27px);
+  width: 75%;
+  height: 25px;
+  z-index: -1;
+  box-shadow: #ff3ca5 0px 9px 10px;
+  background: #ff3ca5;
+}
+.b-programs__subtitle {
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 41px;
+  line-height: 54px;
+  justify-content: center;
+  margin-top: 54px;
+}
+.b-programs__subtitle_dots {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.b-programs__subtitle_dots::before,
+.b-programs__subtitle_dots::after {
+  content: "";
+}
+
+.b-programs__subtitle_dots > span,
+.b-programs__subtitle_dots::before,
+.b-programs__subtitle_dots::after {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ff3ca5;
+}
+.b-programs__subtitle_dots > span {
+  opacity: 0.7;
+}
+.b-programs__subtitle_dots::after {
+  opacity: 0.3;
+}
+.b-programs__subtitle_dots--left {
+  flex-direction: row-reverse;
+}
+
+.b-programs__description {
+  text-transform: uppercase;
+  margin-top: 42px;
+  font-size: 41px;
+  line-height: 1;
+}
+
 .b-programs__list {
   display: flex;
   flex-direction: column;
   gap: 120px;
+  margin-top: 154px;
 }
 
 
 .b-module {
   width: 100%;
-  background-color: blueviolet;
+  background: linear-gradient(250deg, #090015, #6e069a);
   border-radius: 34px;
   padding: 72px 54px;
   position: relative;
@@ -146,13 +211,25 @@ input {
   border-radius: 18px;
   top: 0;
   transform: translateY(-50%);
-  border: 1px solid red;
   font-size: 37px;
   width: 278px;
   height: 82px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(20deg, #773bbc, #ac3379);
+  overflow: hidden;
+  padding: 2px;
+}
+
+.b-module__title > div {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(0deg, #26013f, #010101);
+  border-radius: 16px;
 }
 
 .b-module h3 {

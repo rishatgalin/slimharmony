@@ -12,6 +12,7 @@ const javascriptObfuscator = require('gulp-javascript-obfuscator');
 
 const cssFiles = [
 	'./source/css/reset.css',
+	'./source/css/fonts.css',
 	'./source/css/style.css',
 ]
 function styles() {
