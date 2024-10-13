@@ -1,7 +1,7 @@
 :root {
   --color--text-primary: white;
   --color--pink: #ff3ca5;
-  --color--purpure: #6e069a;
+  --color--purpure: #4c0b76;
 
   --horizontal-offset: 16px;
 }
@@ -409,6 +409,26 @@ h2.default-h2 {
 
 .b-reviews h2 {
   font-size: 55px;
+  position: relative;
+  display: inline-flex;
+}
+.b-reviews h2 > span {
+  position: relative;
+  z-index: 1;
+}
+.b-reviews h2::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  filter: blur(24px);
+  width: 510px;
+  height: 25px;
+  z-index: 0;
+  box-shadow: var(--color--pink) 0 3px 20px;
+  background: var(--color--pink);
+  transform: rotate(-4deg);
 }
 
 .b-reviews__wrapper {
@@ -432,7 +452,6 @@ h2.default-h2 {
   width: 263px;
   height: 435px;
   background: linear-gradient(315deg, #090015, #6e069a);
-  background-color: blueviolet;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -454,6 +473,83 @@ h2.default-h2 {
   font-size: 14px;
   line-height: 22px;
 }
+
+/* STUDENTS */
+.b-student-item {
+  border-radius: 20px;
+  min-width: 318px;
+  width: 318px;
+  height: 398px;
+  background: linear-gradient(315deg, #090015, #6e069a);
+  overflow: hidden;
+  position: relative;
+  white-space: normal;
+}
+.b-student-item__image {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+}
+.b-student-item__image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.b-student-item__content {
+  padding: 124px 24px 24px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  height: 100%;
+}
+.b-student-item__name {
+  font-size: 30px;
+  line-height: 42px;
+}
+.b-student-item__desc {
+  font-size: 15px;
+  line-height: 22px;
+  margin-top: 24px;
+}
+.b-student-item__button {
+  color: var(--color--purpure);
+  font-size: 14px;
+  border-radius: 7px;
+  background-color: #ffffff;
+  width: 182px;
+  height: 46px;
+}
+.b-student-item__details {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 11px;
+  gap: 12px;
+  margin-top: 4px;
+}
+.b-student-item__inst {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 6px;
+  border: 1px solid white;
+  border-radius: 6px;
+}
+.b-student-item__location {
+  height: 12px;
+  padding-left: 16px;
+  background-image: url("../img/pin.png");
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+/* STUDENTS */
 
 /* PROGRAMS  */
 .b-program {
