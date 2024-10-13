@@ -1,27 +1,27 @@
 @font-face {
   font-family: "Next-Art-Regular";
-  src: url("../fonts/NEXT-ART_Regular.woff") format("woff");
+  src: url("./fonts/NEXT-ART_Regular.woff") format("woff");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Next-Art-Bold";
-  src: url("../fonts/NEXT-ART_Bold.woff") format("woff");
+  src: url("./fonts/NEXT-ART_Bold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Roboto-Condensed-Bold";
-  src: url("../fonts/RobotoCondensed-Bold.woff") format("woff");
+  src: url("./fonts/RobotoCondensed-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Golos-Text-Regular";
-  src: url("../fonts/Golos-Text_Regular.woff") format("woff");
+  src: url("./fonts/Golos-Text_Regular.woff") format("woff");
   font-weight: 800;
   font-style: normal;
 }
