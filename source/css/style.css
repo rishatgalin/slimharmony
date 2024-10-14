@@ -243,11 +243,11 @@ input {
 /* ABOUT */
 .b-about__content {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 24px;
 }
 .b-about__content > p {
-  width: 50%;
   font-size: 22px;
   line-height: 33px;
 }
@@ -629,10 +629,10 @@ h2.default-h2 {
 }
 
 .b-module {
-  width: 100%;
+  margin-left: calc(var(--horizontal-offset) * -1);
+  margin-right: calc(var(--horizontal-offset) * -1);
   background: linear-gradient(250deg, #090015, #6e069a);
-  border-radius: 34px;
-  padding: 72px 54px;
+  padding: 72px var(--horizontal-offset);
   position: relative;
   text-align: left;
 }
@@ -707,7 +707,7 @@ h2.default-h2 {
   clear: both;
 }
 .b-module__results ul > li {
-  width: calc(50% - 12px);
+  width: 100%;
   padding-left: 20px;
   background-image: url("../img/check.png");
   background-size: 12px;
@@ -715,18 +715,8 @@ h2.default-h2 {
   background-position: left 4px;
   margin-top: 16px;
 }
-.b-module__results ul > li:first-child,
-.b-module__results ul > li:nth-child(2) {
+.b-module__results ul > li:first-child {
   margin-top: 0;
-}
-
-.b-module__results ul > li:nth-child(odd) {
-  float: left;
-  clear: left;
-}
-.b-module__results ul > li:nth-child(even) {
-  float: right;
-  clear: right;
 }
 
 /* RESULTS */
@@ -734,11 +724,10 @@ h2.default-h2 {
 .b-results__content {
   display: flex;
   align-items: center;
+  flex-direction: column;
   gap: 56px;
 }
-.b-results__text {
-  width: calc(100% - 406px);
-}
+
 .b-results__text > p {
   font-size: 22px;
   line-height: 33px;
@@ -897,6 +886,47 @@ h2.default-h2 {
     max-width: 1100px;
     display: flex;
     justify-content: flex-end;
+  }
+
+  .b-about__content {
+    flex-direction: row;
+  }
+  .b-about__content > p {
+    width: 50%;
+  }
+  .b-about__images {
+    width: 50%;
+  }
+
+  .b-module__results ul > li {
+    width: calc(50% - 12px);
+  }
+  .b-module__results ul > li:nth-child(2) {
+    margin-top: 0;
+  }
+  .b-module__results ul > li:nth-child(odd) {
+    float: left;
+    clear: left;
+  }
+  .b-module__results ul > li:nth-child(even) {
+    float: right;
+    clear: right;
+  }
+
+  .b-module {
+    border-radius: 34px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 54px;
+    padding-right: 54px;
+  }
+
+  .b-results__content {
+    flex-direction: row;
+  }
+  .b-results__text {
+    width: calc(100% - 406px);
   }
 
   .b-tery-ai__list {
