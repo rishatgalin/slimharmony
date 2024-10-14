@@ -72,6 +72,15 @@ input {
   font-family: "Golos-Text-Regular";
 }
 
+.caps {
+  text-transform: uppercase;
+}
+
+strong {
+  font-weight: bold;
+  font-family: "Next-Art-Bold";
+}
+
 .horizontal-offset {
   padding: 0 var(--horizontal-offset);
   max-width: 1100px;
@@ -164,17 +173,48 @@ input {
 .b-banner {
   padding: 60px 0;
   position: relative;
-  background: radial-gradient(
+  background: linear-gradient(180deg, #6e069a, #090015);
+  /* background: radial-gradient(
       circle at 30% 40%,
       rgba(174, 61, 195, 0.7),
       transparent 40%
     ),
     radial-gradient(circle at 70% 30%, rgba(98, 46, 210, 0.6), transparent 50%),
-    #0b001a;
+    #0b001a; */
+}
+
+.b-banner::before {
+  content: "";
+  display: block;
+  width: 600px;
+  height: 600px;
+  box-shadow: rgba(174, 61, 195, 1) 0 0 200px;
+  background: rgba(174, 61, 195, 0.7);
+  filter: blur(100px);
+  position: absolute;
+  z-index: 0;
+  left: 10%;
+  top: 20%;
+  border-radius: 50%;
+}
+.b-banner::after {
+  content: "";
+  display: block;
+  width: 600px;
+  height: 600px;
+  box-shadow: rgba(98, 46, 210, 1) 0 0 200px;
+  background: rgba(98, 46, 210, 0.6);
+  filter: blur(100px);
+  position: absolute;
+  z-index: 0;
+  right: 0;
+  top: 5%;
+  border-radius: 50%;
 }
 
 .b-banner__wrapper {
   position: relative;
+  z-index: 1;
 }
 .b-banner__video {
   overflow: hidden;
@@ -241,6 +281,9 @@ input {
 }
 
 /* ABOUT */
+.b-about {
+  background: linear-gradient(180deg, #090015, black);
+}
 .b-about__content {
   display: flex;
   flex-direction: column;
@@ -293,7 +336,27 @@ input {
 /* ABOUT */
 
 /* Tery AI */
-
+.b-tery-ai {
+  position: relative;
+}
+.b-tery-ai::after {
+  content: "";
+  display: block;
+  width: 700px;
+  height: 700px;
+  box-shadow: rgba(98, 46, 210, 1) 0 0 200px;
+  background: rgba(98, 46, 210, 0.6);
+  filter: blur(100px);
+  position: absolute;
+  z-index: 0;
+  left: 10%;
+  top: 0;
+  border-radius: 50%;
+}
+.b-tery-ai > div {
+  position: relative;
+  z-index: 1;
+}
 .b-tery-ai__content > p {
   font-size: 20px;
   line-height: 30px;
@@ -532,6 +595,7 @@ h2.default-h2 {
   font-size: 11px;
   gap: 12px;
   margin-top: 4px;
+  min-height: 20px;
 }
 .b-student-item__inst {
   display: flex;
@@ -544,7 +608,7 @@ h2.default-h2 {
 .b-student-item__location {
   height: 12px;
   padding-left: 16px;
-  background-image: url("../img/pin.png");
+  background-image: url("./img/pin.png");
   background-size: 12px;
   background-repeat: no-repeat;
   background-position: left center;
@@ -622,6 +686,41 @@ h2.default-h2 {
   margin-top: 154px;
 }
 
+.b-modules {
+  position: relative;
+}
+.b-modules::before {
+  content: "";
+  display: block;
+  width: 500px;
+  height: 500px;
+  box-shadow: rgba(174, 61, 195, 1) 0 0 200px;
+  background: rgba(174, 61, 195, 0.7);
+  filter: blur(100px);
+  position: absolute;
+  z-index: 0;
+  right: 10%;
+  top: 50px;
+  border-radius: 50%;
+}
+.b-modules::after {
+  content: "";
+  display: block;
+  width: 700px;
+  height: 700px;
+  box-shadow: rgba(98, 46, 210, 1) 0 0 200px;
+  background: rgba(98, 46, 210, 0.6);
+  filter: blur(100px);
+  position: absolute;
+  z-index: 0;
+  left: 10%;
+  bottom: 10%;
+  border-radius: 50%;
+}
+.b-modules > div {
+  position: relative;
+  z-index: 1;
+}
 .b-module-list {
   display: flex;
   flex-direction: column;
@@ -709,7 +808,7 @@ h2.default-h2 {
 .b-module__results ul > li {
   width: 100%;
   padding-left: 20px;
-  background-image: url("../img/check.png");
+  background-image: url("./img/check.png");
   background-size: 12px;
   background-repeat: no-repeat;
   background-position: left 4px;
@@ -728,10 +827,22 @@ h2.default-h2 {
   gap: 56px;
 }
 
-.b-results__text > p {
-  font-size: 22px;
-  line-height: 33px;
+.b-results__text_list {
   margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+.b-results__text h3 {
+  font-size: 24px;
+  line-height: 36px;
+}
+.b-results__text p {
+  font-size: 22px;
+  line-height: 32px;
+}
+.b-results__text h3 + p {
+  margin-top: 8px;
 }
 .b-results__images {
   display: flex;
@@ -755,6 +866,9 @@ h2.default-h2 {
 /* CALL TO ACTION */
 .b-call-to-action {
   text-align: center;
+}
+.b-call-to-action .b-square-box {
+  padding: 42px;
 }
 .b-call-to-action__content {
   display: flex;
@@ -865,7 +979,7 @@ h2.default-h2 {
 }
 @media only screen and (min-width: 48em) {
   .vertical-offset {
-    padding: 150px 0;
+    padding: 72px 0;
   }
 
   .b-banner__content_title {
