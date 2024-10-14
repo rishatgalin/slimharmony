@@ -9,12 +9,30 @@ window.onload = () => {
 };
 
 (function () {
+  // FORM POPUP
   const buyButtons = document.querySelectorAll(".b-buy-button");
   const formPopup = document.querySelector("#formPopup");
   if (buyButtons && formPopup) {
     for (const btn of buyButtons) {
       btn.addEventListener("click", () => {
         formPopup.classList.add("b-popup--opened");
+        document.body.classList.add("hidden");
+      });
+    }
+  }
+
+  // STUDENTS POPUP
+  const studentButtons = document.querySelectorAll(".b-student-item__button");
+  if (studentButtons) {
+    for (const btn of studentButtons) {
+      btn.addEventListener("click", () => {
+        const popupId = btn.getAttribute("data-popup-id");
+        const popup = document.querySelector(`#${popupId}`);
+        if (!popup) {
+          return;
+        }
+
+        popup.classList.add("b-popup--opened");
         document.body.classList.add("hidden");
       });
     }
