@@ -583,7 +583,7 @@ h2.default-h2 {
   line-height: 42px;
 }
 .b-student-item__desc {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 22px;
   margin-top: 24px;
 }
@@ -1040,6 +1040,12 @@ h2.default-h2 {
 .b-student-history__text {
   font-size: 18px;
   line-height: 24px;
+}
+.b-student-history__text ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+.b-student-history__text ul li {
 }
 .b-student-history__subtitle {
   font-size: 22px;
