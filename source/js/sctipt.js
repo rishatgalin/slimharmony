@@ -8,6 +8,8 @@ window.onload = () => {
   }
 };
 
+document.addEventListener("resize", onScroll);
+
 (function () {
   // FORM POPUP
   const buyButtons = document.querySelectorAll(".b-buy-button");
@@ -48,4 +50,38 @@ window.onload = () => {
       });
     }
   }
+
+  onScroll();
 })();
+
+function onScroll() {
+  const reviews = document.querySelector(".b-reviews__wrapper--reviews");
+  const results = document.querySelector(".b-reviews__wrapper--results");
+  setScrollbarOffset(reviews);
+  setScrollbarOffset(results);
+}
+
+function setScrollbarOffset(element) {
+  const windowWidth = window.innerWidth;
+  if (!element) {
+    return;
+  }
+
+  const scrollElement = element.querySelector(".b-reviews__scroll");
+  if (!scrollElement) {
+    return;
+  }
+
+  if (windowWidth > 1100) {
+    const offset = (windowWidth - 1100) / 2;
+    element.style.marginLeft = `-${offset}px`;
+    element.style.marginRight = `-${offset}px`;
+    scrollElement.style.paddingLeft = `${offset}px`;
+    scrollElement.style.paddingRight = `${offset}px`;
+  } else {
+    element.style.marginLeft = "-16px";
+    element.style.marginRight = "-16px";
+    scrollElement.style.paddingLeft = "16px";
+    scrollElement.style.paddingRight = "16px";
+  }
+}
